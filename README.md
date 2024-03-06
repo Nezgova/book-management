@@ -1,1 +1,3 @@
-
+MANAGEMENT 
+Management app console with a login usin only C.
+data stored in a text file can be improved ...
