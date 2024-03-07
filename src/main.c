@@ -82,6 +82,7 @@ int login(char *user, char *pw)
 
 int main()
 {
+    char user[10],pw[20];
     int a;
     printf("1.Login\n2.SignUp");
     scanf("%d", &a);
@@ -89,18 +90,18 @@ int main()
     {
     case 1:
         printf("Username:");
-        scanf("%s", t->user);
+        scanf("%s", user);
         printf("Password:");
-        scanf("%s", t->pw);
-        a = login(t->user, t->pw);
+        scanf("%s", pw);
+        a = login(user, pw);
         break;
     case 2:
         printf("Please Enter a Username:");
-        scanf("%s", t->user);
+        scanf("%s", user);
         printf("Please Enter a Password:");
-        scanf("%s", t->pw);
-        signup(t->user, t->pw);
-        a = login(t->user, t->pw);
+        scanf("%s", pw);
+        signup(user, pw);
+        a = login(user, pw);
         break;
     default:
         break;
