@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+//sign up function for signing in a new user
 void signup(char user[], char pw[])
 {
 
@@ -18,6 +19,7 @@ void signup(char user[], char pw[])
         printf("Error\n");
     }
 }
+//check function to check if the user exists
 int check(char *user, char *pw)
 {
     FILE *file = fopen("../data/users.txt", "r");
@@ -45,7 +47,7 @@ int check(char *user, char *pw)
         return -1;
     }
 }
-
+//login function to login the user into his space
 int login(char *user, char *pw)
 {
     int a;
@@ -77,26 +79,9 @@ int login(char *user, char *pw)
     }
 }
 
-/*void show(char *filename) {
-    FILE *file = fopen(filename, "r");
-
-    if (file != NULL) {
-        char username[50];
-        char password[50];
-
-        while (fscanf(file, "%s %s", username, password) != EOF) {
-            printf("Username: %s, Password: %s\n", username, password);
-        }
-
-        fclose(file);
-    } else {
-        printf("Error opening file.\n");
-    }
-}*/
 
 int main()
 {
-    char user[10], pw[20];
     int a;
     printf("1.Login\n2.SignUp");
     scanf("%d", &a);
@@ -104,18 +89,18 @@ int main()
     {
     case 1:
         printf("Username:");
-        scanf("%s", user);
+        scanf("%s", t->user);
         printf("Password:");
-        scanf("%s", pw);
-        a = login(user, pw);
+        scanf("%s", t->pw);
+        a = login(t->user, t->pw);
         break;
     case 2:
         printf("Please Enter a Username:");
-        scanf("%s", user);
+        scanf("%s", t->user);
         printf("Please Enter a Password:");
-        scanf("%s", pw);
-        signup(user, pw);
-        a = login(user, pw);
+        scanf("%s", t->pw);
+        signup(t->user, t->pw);
+        a = login(t->user, t->pw);
         break;
     default:
         break;
@@ -124,7 +109,7 @@ int main()
     if (a == 1)
     {
 
-        // management treatement here
+        // treatement here
     }
     else
     {
